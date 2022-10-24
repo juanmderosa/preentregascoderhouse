@@ -1,0 +1,19 @@
+.greetingContainer{
+    width: 100%;
+    height: 4rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: .5rem;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.greetingContainer h3{
+    font-size: 2rem;
+}
+
+.greetingContainer h3 span{
+    color: rgb(25, 165, 207);
+    text-shadow: 2px 2px grey;
+}

@@ -1,0 +1,63 @@
+.container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.itemCounContainer{
+    margin: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding: 15px;
+    width: 500px;
+    border: 2px solid black;
+    border-radius: 10px;
+}
+
+.itemCounContainer p {
+    border: 1px solid black;
+    width: 100px;
+    text-align: center;
+    font-size: 0.8rem;
+}
+
+.btn-masMenos{
+    width: 30px;
+    height: 30px;
+    padding: 5px;
+    background-color: rgb(25, 165, 207);
+    border-radius: 50%;
+    border: none;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-masMenos:disabled{
+    background-color: rgba(25, 165, 207, 0.301);
+}
+
+
+.btn-agregarCarrito{
+    width: 150px;
+    padding: 5px;
+    text-align: center;
+    vertical-align: auto;
+    background-color: rgb(25, 165, 207);
+    border-radius: 10px;
+    border: none;
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+}
+
+.btn-agregarCarrito:disabled{
+    background-color: rgba(25, 165, 207, 0.301);
+}

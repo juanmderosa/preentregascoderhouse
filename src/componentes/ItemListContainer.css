@@ -7,13 +7,24 @@
     align-items: center;
     margin: .5rem;
     font-family: 'Montserrat', sans-serif;
+    margin: 20px;
 }
 
 .greetingContainer h3{
     font-size: 1.2rem;
+    text-align: center;
 }
 
 .greetingContainer h3 span{
     color: rgb(25, 165, 207);
     text-shadow: 2px 2px grey;
+}
+
+.ItemListContainer{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
 }

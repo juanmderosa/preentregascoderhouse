@@ -44,10 +44,12 @@
 }
 
 
-.btn-agregarCarrito{
+.btn-agregarCarrito,.btn-TerminarCompra {
     width: 150px;
+    height: 35px;
     padding: 5px;
     text-align: center;
+    display: flex;
     vertical-align: auto;
     background-color: rgb(25, 165, 207);
     border-radius: 10px;
@@ -56,6 +58,9 @@
     font-weight: bold;
     color: white;
     cursor: pointer;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
 }
 
 .btn-agregarCarrito:disabled{

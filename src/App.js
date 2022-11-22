@@ -14,7 +14,7 @@ export const App = () =>{
             <CartProvider>
                 <NavBar/>
                     <Routes>
-                        <Route exact path='/' element={<ItemListContainer greeting="TUTOR"/>} />
+                        <Route exact path='/' element={<ItemListContainer/>} />
                         <Route exact path='/categoria/:categoriaID' element={<ItemListContainer/>} />
                         <Route exact path='/detalle/:detalleID' element={<ItemDetailContainer/>} />
                         <Route exact path='/cart' element={<Cart/>} />

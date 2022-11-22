@@ -13,7 +13,6 @@ export function NavBar (){
                     <ul className="ulNav">
                         <li className="ulNav-li"><NavLink to="/categoria/instrumentos">Instrumentos</NavLink></li>
                         <li className="ulNav-li"><NavLink to="/categoria/accesorios">Accesorios</NavLink></li>
-{/*                         <li className="ulNav-li"><NavLink to="/">¿Cómo Comprar?</NavLink></li> */}
                     </ul>
                     <div className="cartWidget"><NavLink to="/cart"><CartWidget/></NavLink></div>
                 </nav>

@@ -23,7 +23,6 @@ export const CartProvider = ({children}) =>{
 
     }
 
-        console.log("carrito", cart)
     return(
         <CartContext.Provider value={{
             addProduct,

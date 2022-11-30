@@ -1,0 +1,59 @@
+.checkout-container{
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.checkout-h2{
+    margin-bottom: 20px;
+}
+.checkout-h3{
+    margin-bottom: 20px;
+}
+
+.checkout-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+}
+.checkout-input{
+    margin: 5px;
+    padding: 10px;
+    width: 350px;
+}
+.checkout-formaDePago{
+    margin: 5px;
+}
+.checkout-formaDePago-select{
+    margin: 30px;
+}
+.checkout-formaDePago-option{
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.btn-Pagar{
+    width: 150px;
+    height: 35px;
+    padding: 5px;
+    text-align: center;
+    display: flex;
+    vertical-align: auto;
+    background-color: rgb(25, 165, 207);
+    border-radius: 10px;
+    border: none;
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-top: 10px;
+}

@@ -27,7 +27,7 @@ export const ItemDetail = ({data}) =>{
                 <p className="itemDetailDescription">{data.description}</p>
                 { irAlCarrito 
                 ? <Link className="btn-TerminarCompra" to="/cart">Terminar Compra</Link>
-                :<ItemCount initial={1} stock={5} onAdd={onAdd}/>
+                :<ItemCount initial={1} stock={data.stock} onAdd={onAdd}/>
                 }
             </div>
         </div>

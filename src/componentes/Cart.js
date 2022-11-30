@@ -1,8 +1,56 @@
+import { useContext } from "react"
+import { Link } from "react-router-dom"
+import { CartContext } from "../context/CartContext"
+import { CartItem } from "./CartItem"
+import { addDoc, collection, getFirestore } from "firebase/firestore"
+import "./Cart.css"
+
+
 export const Cart = () =>{
 
-   return (
-    <h1> Detalle de Carrito de Compras</h1>
-   )
+   const {cart, totalPrice} = useContext(CartContext);
 
+   const order = {
+      buyer: {
+         name: "Juan",
+         email: "juan@juan.com.ar",
+         phone: "123123132",
+         address: "Calle Falsa 123"
+      },
+      items: cart.map(product=> ({id: product.id, title: product.title, price: product.price, quantity: product.quantity})),
+      total: totalPrice()
+   }
+
+   const handleOrder = () =>{
+      const db = getFirestore();
+      const orderCollection = collection(db, "orders");
+      addDoc(orderCollection, order)
+      .then(({id})=> console.log(id))
+   }
+
+   if(cart.length === 0){
+      return(
+         <>
+         <div className="noProducts-container">
+            <p className="noProducts">No hay productos agregados al carrito</p>
+            <Link to="/" className="irComprar">Ir a Comprar</Link>
+         </div>
+            
+         </>
+      )
+   }
+
+   return (
+   <>
+      <h2 className="cartDetail">Detalle del Pedido</h2>
+      {
+         cart.map(product => <CartItem key={product.id} product={product}/>)
+      }
+      <div className="finalizar-container">
+         <p className="totalPrice">Total: ${totalPrice()}</p>
+         <Link to="/checkout" className="btn-finalizar" onClick={handleOrder}>Finalizar compra</Link>
+      </div>
+   </>
+   )
 }
 

@@ -26,14 +26,11 @@ export function ItemListContainer ({greeting}) {
     },[categoriaID])
 
     return (
-    <div className="greetingContainer">
-        <div>
-            <h3>"¡Hola! Te damos la bienvenida a nuestra tienda online!"</h3>
+    <div className="container">
+            <h3 className="title">PRODUCTOS</h3>
             <main className="ItemListContainer">
             <ItemList datos={productos}/>
             </main>
-
-        </div>
     </div>
     )
 }

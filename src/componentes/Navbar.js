@@ -4,7 +4,7 @@ import {CartWidget} from "./CartWidget"
 import { NavLink } from "react-router-dom"
 
 export function NavBar (){
-    return <header>
+    return( <header>
                 <nav className="navHeader">
                     <div className="logoTitle">
                             <NavLink to="/"><img src={logo} alt="logo" className="logoNav"/></NavLink>
@@ -16,5 +16,5 @@ export function NavBar (){
                     </ul>
                     <div className="cartWidget"><NavLink to="/cart"><CartWidget/></NavLink></div>
                 </nav>
-            </header>
+            </header>)
 }

@@ -21,8 +21,6 @@ export const ItemDetailContainer = () =>{
             })
     },[detalleID])
 
-    console.log(data)
-
     return(
         <ItemDetail data={data} />
     )

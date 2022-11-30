@@ -1,6 +1,30 @@
 .cartIcon{
-    width:  1.5rem;
-    height: 1.5rem;
+    width:  2rem;
+    height: 2rem;
     fill: rgb(66, 62, 62);
     cursor: pointer;
+}
+
+.cartWidgetContainer{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.totalProducts{
+    font-size: 12px;
+    font-weight: 700;
+    padding: 5px;
+    color: white;
+    background-color: rgb(25, 165, 207);
+    width: 30px;
+    height: 30px;
+    border: 1px solid transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    font-family: 'Montserrat', sans-serif;
 }

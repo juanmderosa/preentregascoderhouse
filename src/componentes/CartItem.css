@@ -1,10 +1,11 @@
 .cartItem-container{
-    width: 100vw;
     display: flex;
+    flex-wrap: wrap;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     font-family: 'Montserrat', sans-serif;
+    box-sizing: border-box;
 }
 
 .cartItem-img{

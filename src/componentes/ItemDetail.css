@@ -1,12 +1,12 @@
 .itemDetailContainer{
     width: 100%;
-    margin: 30px;
     padding: 20px;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     font-family: 'Montserrat', sans-serif;
+    box-sizing: border-box;
 }
 
 .descriptionContainer{
@@ -17,18 +17,18 @@
     width: 100%;
     justify-content: space-evenly;
     flex-wrap: wrap;
-    align-items: flex-start;
+    align-items: center;
 }
 
 .itemDetailTitle{
-
+    text-align: center;
 }
 .itemDetailPrice{
-
+    text-align: center;
 }
 
 .itemDetailDescription{
-
+    text-align: center;
 }
 
 .imgContainer{

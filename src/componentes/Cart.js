@@ -4,18 +4,21 @@ import { CartContext } from "../context/CartContext"
 import { CartItem } from "./CartItem"
 import { addDoc, collection, getFirestore } from "firebase/firestore"
 import "./Cart.css"
+import { OrderContext } from "../context/OrderContext"
+
 
 
 export const Cart = () =>{
 
    const {cart, totalPrice} = useContext(CartContext);
+   const {name, email, phone, address} = useContext(OrderContext);
 
    const order = {
       buyer: {
-         name: "Juan",
-         email: "juan@juan.com.ar",
-         phone: "123123132",
-         address: "Calle Falsa 123"
+         name,
+         email,
+         phone,
+         address
       },
       items: cart.map(product=> ({id: product.id, title: product.title, price: product.price, quantity: product.quantity})),
       total: totalPrice()

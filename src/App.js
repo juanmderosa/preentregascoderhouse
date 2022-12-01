@@ -7,11 +7,13 @@ import {Cart} from "./componentes/Cart"
 import { CartProvider } from './context/CartContext';
 import { Checkout } from './componentes/Checkout';
 import { Footer } from './componentes/Footer';
+import { OrderProvider } from './context/OrderContext';
 
 export const App = () =>{
     return(
     <>
         <BrowserRouter>
+            <OrderProvider>
             <CartProvider>
                 <NavBar/>
                     <Routes>
@@ -21,8 +23,9 @@ export const App = () =>{
                         <Route exact path='/cart' element={<Cart/>} />
                         <Route exact path='/checkout' element={<Checkout/>} />
                     </Routes>
-                <Footer/>
             </CartProvider>
+            </OrderProvider>
+            <Footer/>
         </BrowserRouter>
 
         </>

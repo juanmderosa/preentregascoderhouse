@@ -5,8 +5,6 @@ import { useContext } from "react"
 export function CartWidget () {
 
         const {totalProducts} = useContext(CartContext)
-        console.log(totalProducts())
-
 
         return (
         <div className="cartWidgetContainer">

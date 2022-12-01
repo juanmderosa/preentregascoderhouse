@@ -1,9 +1,9 @@
 .finalizar-container{
     width: 100%;
-    min-height: 80vh;
+    min-height: 70vh;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     font-family: 'Montserrat', sans-serif;
     box-sizing: border-box;

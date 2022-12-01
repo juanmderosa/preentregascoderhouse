@@ -1,19 +1,37 @@
 import "./Checkout.css"
 import { useState } from "react"
 import { Confirmation } from "./Confirmation"
+import { useContext } from "react"
+import { OrderContext } from "../context/OrderContext"
+import { CartContext } from "../context/CartContext"
+import { Link } from "react-router-dom"
+
+
+
 
 export const Checkout = () =>{
-    const [name, setName] = useState("")
-    const [email, setEmail] = useState("")
-    const [address, setAddress] = useState("")
-    const [phone, setPhone] = useState("")
-    const [formaDePago, setformaDePago] = useState("")
+   
+    const {name, email, phone, address, formaDePago, setName, setEmail, setPhone, setAddress, setformaDePago} = useContext(OrderContext);
+    const {cart} = useContext(CartContext);
     const [verDetalle, setVerDetalle] = useState(false)
+    
 
     const handleSubmit = (e) =>{
         e.preventDefault();
         setVerDetalle(true)
     }
+
+    if(cart.length === 0){
+        return(
+           <>
+           <div className="noProducts-container">
+              <p className="noProducts">No hay productos agregados al carrito</p>
+              <Link to="/" className="irComprar">Ir a Comprar</Link>
+           </div>
+              
+           </>
+        )
+     }
 
     return(
         (!verDetalle ?  
@@ -21,11 +39,14 @@ export const Checkout = () =>{
         <h2 className="checkout-h2">Checkout</h2>
         <h3 className="checkout-h3">Completá tus datos para finalizar la compra</h3>
         <form className="checkout-form" onSubmit={handleSubmit}>
-            <input  onChange={(e)=> setName(e.target.value)} className="checkout-input" type="text" placeholder="Nombre" name="name" value= {name}/>
-            <input onChange={(e)=> setEmail(e.target.value)} className="checkout-input" type="email" placeholder="E-mail" name="email" value= {email}/>
-            <input onChange={(e)=> setAddress(e.target.value)} className="checkout-input" type="text" placeholder="Dirección" name="phone" value= {phone}/>
-            <input onChange={(e)=> setPhone(e.target.value)} className="checkout-input" type="text" placeholder="Teléfono" name="address" 
-                value= {address}/>
+            <input required onChange={(e)=> setName(e.target.value)} className="checkout-input" type="text" placeholder="Nombre" name="name" value= {name}/>
+
+            <input required onChange={(e)=> setEmail(e.target.value)} className="checkout-input" type="email" placeholder="E-mail" name="email" value= {email}/>
+
+            <input required onChange={(e)=> setAddress(e.target.value)} className="checkout-input" type="text" placeholder="Dirección" name="phone" value= {address}/>
+
+            <input required onChange={(e)=> setPhone(e.target.value)} className="checkout-input" type="text" placeholder="Teléfono" name="address"  value= {phone}/>
+            
             <p className="checkout-formaDePago">Forma de Pago</p>
             <select onChange={(e)=> setformaDePago(e.target.value)} className="checkout-formaDePago-select" placeholder="Forma de pago" name={formaDePago}>
                 <option className="checkout-formaDePago-option" value="tarjeta">Tarjeta</option>

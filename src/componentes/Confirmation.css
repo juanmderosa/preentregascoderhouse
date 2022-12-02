@@ -76,3 +76,22 @@
     margin-bottom: 20px;
     font-weight: 700;
 }
+
+.btn-volverInicio{
+    margin-top: 20px;
+    width: 150px;
+    height: 35px;
+    padding: 5px;
+    display: flex;
+    background-color: rgb(25, 165, 207);
+    border-radius: 10px;
+    border: none;
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}

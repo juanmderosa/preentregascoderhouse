@@ -2,12 +2,15 @@ import "./Confirmation.css"
 import { CartContext } from "../context/CartContext"
 import { useContext } from "react"
 import { OrderContext } from "../context/OrderContext"
+import { Link } from "react-router-dom"
 
 
 export const Confirmation = () =>{
 
-    const {cart, totalPrice, totalProducts} = useContext(CartContext);
+    const {cart, totalPrice, totalProducts, clearCart} = useContext(CartContext);
     const {name, email, phone, address} = useContext(OrderContext);
+
+
 
     return(
         <div className="confirmation-container">
@@ -32,6 +35,7 @@ export const Confirmation = () =>{
                     </div>
                 </div>
             </section>
+            <Link className="btn-volverInicio" to="/" onClick={() => clearCart()}>Volver al Inicio</Link>
         </div>
     )
 }

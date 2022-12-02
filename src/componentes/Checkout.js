@@ -5,6 +5,8 @@ import { useContext } from "react"
 import { OrderContext } from "../context/OrderContext"
 import { CartContext } from "../context/CartContext"
 import { Link } from "react-router-dom"
+import { addDoc, collection, getFirestore } from "firebase/firestore"
+
 
 
 
@@ -12,14 +14,30 @@ import { Link } from "react-router-dom"
 export const Checkout = () =>{
    
     const {name, email, phone, address, formaDePago, setName, setEmail, setPhone, setAddress, setformaDePago} = useContext(OrderContext);
-    const {cart} = useContext(CartContext);
+    const {cart, totalPrice} = useContext(CartContext);
     const [verDetalle, setVerDetalle] = useState(false)
-    
 
-    const handleSubmit = (e) =>{
-        e.preventDefault();
-        setVerDetalle(true)
+    const order = {
+       buyer: {
+          name,
+          email,
+          phone,
+          address
+       },
+       items: cart.map(product=> ({id: product.id, title: product.title, price: product.price, quantity: product.quantity})),
+       total: totalPrice()
     }
+ 
+    const handleOrder = (e) =>{
+        e.preventDefault();
+        
+       const db = getFirestore();
+       const orderCollection = collection(db, "orders");
+       addDoc(orderCollection, order)
+       .then(({id})=> console.log(id))
+       setVerDetalle(true)
+    }
+    
 
     if(cart.length === 0){
         return(
@@ -38,7 +56,7 @@ export const Checkout = () =>{
         <div className="checkout-container">
         <h2 className="checkout-h2">Checkout</h2>
         <h3 className="checkout-h3">Completá tus datos para finalizar la compra</h3>
-        <form className="checkout-form" onSubmit={handleSubmit}>
+        <form className="checkout-form" onSubmit={handleOrder}>
             <input required onChange={(e)=> setName(e.target.value)} className="checkout-input" type="text" placeholder="Nombre" name="name" value= {name}/>
 
             <input required onChange={(e)=> setEmail(e.target.value)} className="checkout-input" type="email" placeholder="E-mail" name="email" value= {email}/>

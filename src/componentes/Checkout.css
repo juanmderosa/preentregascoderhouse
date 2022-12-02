@@ -80,9 +80,7 @@
     width: 150px;
     height: 35px;
     padding: 5px;
-    text-align: center;
     display: flex;
-    vertical-align: auto;
     background-color: rgb(25, 165, 207);
     border-radius: 10px;
     border: none;

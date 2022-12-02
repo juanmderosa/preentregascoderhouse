@@ -7,7 +7,6 @@ import { initializeApp } from 'firebase/app';
 import { firebaseConfig } from './firebase/config';
 initializeApp(firebaseConfig)
 
-console.log(firebaseConfig)
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

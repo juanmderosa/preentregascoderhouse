@@ -1,12 +1,17 @@
-import { initializeApp } from "firebase/app";
+const {
+    REACT_APP_API_KEY,
+    REACT_APP_AUTH_DOMAIN,
+    REACT_APP_PROJECT_ID,
+    REACT_APP_STORAGE_BUCKET,
+    REACT_APP_MESSAGING_SENDER_ID,
+    REACT_APP_ID
+} = process.env
 
-const firebaseConfig = {
-  apiKey: "AIzaSyCdW7xUBDVGQVOGV4gBrutOBDhkR9EyVQg",
-  authDomain: "reactcoderhousejm.firebaseapp.com",
-  projectId: "reactcoderhousejm",
-  storageBucket: "reactcoderhousejm.appspot.com",
-  messagingSenderId: "1078764369954",
-  appId: "1:1078764369954:web:458661a05de48a44a2b27b"
-};
-
-initializeApp(firebaseConfig);
+export const firebaseConfig = {
+    apiKey: REACT_APP_API_KEY,
+    authDomain: REACT_APP_AUTH_DOMAIN,
+    projectId: REACT_APP_PROJECT_ID,
+    storageBucket: REACT_APP_STORAGE_BUCKET,
+    messagingSenderId: REACT_APP_MESSAGING_SENDER_ID,
+    appId: REACT_APP_ID
+}
